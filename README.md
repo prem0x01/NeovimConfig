@@ -1,10 +1,3 @@
-<<<<<<< HEAD
-=======
-
-### Updated `README.md` with Screenshot
-
-````markdown
->>>>>>> 7483d6b (inital commit 2)
 # Neovim IDE Configuration
 
 Welcome to my Neovim configuration. This setup is designed to provide a fast, modern, and highly customizable development environment using Lua and Lazy.nvim.
@@ -82,7 +75,3 @@ nvim/
 │   └── utils/
 │       └── init.lua
 ```
-<<<<<<< HEAD
-
-=======
->>>>>>> 7483d6b (inital commit 2)
