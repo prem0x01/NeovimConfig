@@ -18,19 +18,45 @@ vim.defer_fn(function()
         map({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts)
 
         vim.diagnostic.config({
-            virtual_text = { prefix = "●", source = "if_many", spacing = 2 },
-            signs = { priority = 10 },
+            virtual_text = {
+                prefix = "●",
+                source = "if_many",
+                spacing = 4,
+            },
+            signs = true,
             update_in_insert = true,
             severity_sort = true,
             float = {
                 border = "rounded",
                 source = "always",
-                header = "💀",
+                header = "⚠️ Diagnostics",
                 max_width = 80,
                 max_height = 10,
-                format = function(d) return string.format("%s [%s]", d.message, d.source) end,
+                format = function(d)
+                    return string.format("%s [%s]", d.message, d.source)
+                end,
             },
         })
+
+        -- Cool diagnostic signs
+        local signs = {
+            Error = "✘",
+            Warn  = "▲",
+            Hint  = "💡",
+            Info  = "",
+        }
+        for type, icon in pairs(signs) do
+            local hl = "DiagnosticSign" .. type
+            vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
+        end
+
+        -- Float opens on hover, hides on move
+        vim.cmd([[
+          autocmd CursorHold * lua vim.diagnostic.open_float(nil, { focus = false })
+          autocmd CursorMoved * lua vim.diagnostic.hide()
+        ]])
+
+        vim.o.updatetime = 250 -- trigger CursorHold quickly
     end
 
     -- Basic servers

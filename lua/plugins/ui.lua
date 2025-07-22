@@ -65,7 +65,13 @@ return {
                 char = "│",
                 tab_char = "│",
             },
-            scope = { enabled = false },
+            scope = {
+                enabled = true,
+                show_start = false,
+                show_end = false,
+                injected_languages = true,
+                highlight = { "IblHighlight" },
+            },
             exclude = {
                 filetypes = {
                     "help", "alpha", "dashboard", "neo-tree", "Trouble",
@@ -73,7 +79,28 @@ return {
                 },
             },
         },
+        config = function(_, opts)
+            -- ✅ Define highlight group FIRST
+            vim.api.nvim_set_hl(0, "IblHighlight", { fg = "#facc15", nocombine = true })
+
+            -- Then set up ibl
+            require("ibl").setup(opts)
+
+            -- ✨ Simulated animation on CursorHold
+            vim.api.nvim_create_autocmd("CursorHold", {
+                pattern = "*",
+                callback = function()
+                    for i = 0, 5 do
+                        vim.defer_fn(function()
+                            vim.api.nvim_set_hl(0, "IblHighlight", { fg = "#facc15" })
+                        end, i * 40)
+                    end
+                end,
+            })
+        end,
     },
+
+
 
     {
         "norcalli/nvim-colorizer.lua",

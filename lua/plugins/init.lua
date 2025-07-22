@@ -18,10 +18,6 @@ require("lazy").setup({
         priority = 1000,
     },
 
-    -- Mason for managing LSP servers
-    { "williamboman/mason.nvim",          config = true },
-    { "williamboman/mason-lspconfig.nvim" },
-
     -- Theming
     {
         "luisiacc/gruvbox-baby",
@@ -51,5 +47,7 @@ require("lazy").setup({
     { import = "plugins.neoscroll" },
     { import = "plugins.nvimtree" },
     { import = "plugins.todo-comments" },
+    { import = "plugins.mason" },
+
 
 })
