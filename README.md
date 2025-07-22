@@ -1,10 +1,10 @@
-To add a screenshot in your `README.md`, place an image (e.g., `screenshot.png`) in your repository root or inside a folder like `assets/`, and reference it like this:
-
----
+<<<<<<< HEAD
+=======
 
 ### Updated `README.md` with Screenshot
 
 ````markdown
+>>>>>>> 7483d6b (inital commit 2)
 # Neovim IDE Configuration
 
 Welcome to my Neovim configuration. This setup is designed to provide a fast, modern, and highly customizable development environment using Lua and Lazy.nvim.
@@ -13,7 +13,7 @@ Whether you're working with Lua, Go, Python, Markdown, or web development, this 
 
 ## Screenshot
 
-![Neovim IDE Preview](assets/jpg)
+![Neovim IDE Preview](assets/screenshot.jpg)
 
 ## Features
 
@@ -82,29 +82,7 @@ nvim/
 │   └── utils/
 │       └── init.lua
 ```
+<<<<<<< HEAD
 
-## Customization
-
-Feel free to tweak your configuration. The code is modular and organized into logical sections. Adding new plugins is easy via the `plugins/` folder and the Lazy plugin manager.
-
-## Credits
-
-Thanks to the amazing Neovim community and open-source plugin authors who make this kind of setup possible.
-
-## License
-
-This configuration is open source. Feel free to use it as a base and modify it as you wish.
-
-```
-
----
-
-### To Complete:
-- Take a screenshot of your Neovim setup (use `Flameshot`, `gnome-screenshot`, or similar).
-- Save it as `screenshot.png` or any name you prefer.
-- Place it inside an `assets/` folder or next to the `README.md`.
-- Push both to GitHub.
-
-Let me know if you'd like me to generate a preview or create a `contributing.md` or dotfiles installation script too.
-```
-
+=======
+>>>>>>> 7483d6b (inital commit 2)
