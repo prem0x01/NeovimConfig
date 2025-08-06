@@ -21,11 +21,12 @@ require("lazy").setup({
     -- Theming
     {
         "luisiacc/gruvbox-baby",
-        priority = 1000,
-        config = function()
-            vim.cmd("colorscheme gruvbox-baby")
-        end,
-    },
+      priority = 1000,
+   config = function()
+         vim.cmd("colorscheme gruvbox-baby")
+       end,
+     },
+
 
     -- Plugin Modules
     { import = "plugins.telescope" },

@@ -2,6 +2,16 @@
 
 return {
     {
+        "nvim-treesitter/nvim-treesitter",
+        opts = {
+            ensure_installed = {
+                "markdown",
+                "markdown_inline",
+            },
+        },
+    },
+
+    {
         "iamcco/markdown-preview.nvim",
         cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
         ft = { "markdown" },
@@ -21,6 +31,8 @@ return {
             vim.g.vim_markdown_folding_disabled = 1
             vim.g.vim_markdown_math = 1
             vim.g.vim_markdown_frontmatter = 1
+            vim.g.vim_markdown_conceal = 2
+            vim.g.vim_markdown_conceal_code_blocks = 1
         end,
     },
 
@@ -58,9 +70,9 @@ return {
                 symbols = {
                     headlines = { "◉", "○", "✸", "✿" },
                     checkboxes = {
-                        half = { "", "OrgTSCheckboxHalfChecked" },
+                        half = { "", "OrgTSCheckboxHalfChecked" },
                         done = { "✓", "OrgDone" },
-                        todo = { "˟", "OrgTODO" },
+                        todo = { "", "OrgTODO" },
                     },
                 },
             })

@@ -1,6 +1,16 @@
 -- Key mappings for enhanced navigation and functionality
 
 local map = vim.keymap.set
+local opts = { noremap = true, silent = true }
+
+-- Bufferline
+map("n", "<Tab>", ":BufferLineCycleNext<CR>", opts)
+map("n", "<S-Tab>", ":BufferLineCyclePrev<CR>", opts)
+map("n", "<leader>bp", ":BufferLineMovePrev<CR>", opts)
+map("n", "<leader>bn", ":BufferLineMoveNext<CR>", opts)
+map("n", "<leader>bd", ":bdelete<CR>", opts)
+map("n", "<leader>bc", ":BufferLinePickClose<CR>", opts)
+map("n", "<leader>bb", ":BufferLinePick<CR>", opts)
 
 -- System integration keymaps
 map("n", "<leader>x", "<cmd>!chmod +x %<CR>", { desc = "Make file executable", silent = true })
@@ -69,3 +79,6 @@ map("n", "N", "Nzzzv", { desc = "Previous search result and center" })
 -- File explorer
 map("n", "<leader>tt", "<cmd>NvimTreeToggle<CR>", { desc = "Toggle file explorer" })
 map("n", "<leader>tf", "<cmd>NvimTreeFocus<CR>", { desc = "Focus file explorer" })
+
+-- Markdown
+map("n", "<leader>mp", ":Glow<CR>", { desc = "Markdown Preview" })
